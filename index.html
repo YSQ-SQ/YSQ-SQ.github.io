@@ -77,7 +77,7 @@ ga('send', 'pageview');
 <aside class="widget">
 		<h3 class="widget-title">Archives</h3>		
 		<ul>
-			<ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2024/11/">November 2024</a><span class="archive-list-count">2</span></li></ul>
+			<ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2024/11/">November 2024</a><span class="archive-list-count">3</span></li></ul>
 		</ul>
 	</aside>
 
@@ -95,6 +95,10 @@ ga('send', 'pageview');
 		<ul>
 			
           <li>
+            <a href="/2024/11/15/%E6%90%AD%E5%BB%BA-Hello-OS/">搭建 Hello OS</a>
+          </li>
+        
+          <li>
             <a href="/2024/11/12/%E7%AC%AC%E4%B8%80%E7%AF%87%E6%96%87%E7%AB%A0/">第一篇文章</a>
           </li>
         
@@ -110,7 +114,7 @@ ga('send', 'pageview');
 		
   <aside class="widget">
 		<h3 class="widget-title">Tag Cloud</h3>
-        <a href="/tags/%E8%AE%B0%E5%BD%95/" style="font-size: 10px;">记录<span class="count">1</span></a>
+        <a href="/tags/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/" style="font-size: 10px;">操作系统<span class="count">1</span></a> <a href="/tags/%E8%AE%B0%E5%BD%95/" style="font-size: 10px;">记录<span class="count">1</span></a>
     </aside>
 
 	
@@ -120,6 +124,63 @@ ga('send', 'pageview');
 		<div id="content" class="site-content">
 			<main id="main" class="site-main" role="main">
 				
+  
+    
+<article class="hentry ">
+		
+		
+			<header class="entry-header">
+				<h2 class="entry-title"><a class="post-title-link" href="/2024/11/15/%E6%90%AD%E5%BB%BA-Hello-OS/" rel="bookmark">搭建 Hello OS</a></h2>	
+			</header>
+		
+		<!-- .entry-header -->
+		<div class="entry-content">
+			
+				<p>  根据操作系统实战45讲编写。</p>
+<p>利用make构建工具，使用nasm，gcc 进行编译，链接。用到的文件包括：</p>
+<p>entry.asm,main.c,vgastr.c,vgastr.h,hello.lds</p>
+<p>文件的作用：</p>
+<p>entry.asm：汇编代码，定义GRUB的多引导协议头。关掉中断，设定CPU的工作模式，初始化CPU寄存器和C语言的运行环境。</p>
+<p>main.c：输出Hello OS！</p>
+<p>vgastr.c：定义printf函数，将要打印的字符串输入到显存开始处。</p>
+<p>vgastr.h：定义头文件</p>
+<p>hello.lds：链接脚本文件</p>
+<p>总结：第一步，用汇编程序初始化CPU的寄存器、设置CPU的工作模式和栈，加入GRUB引导协议头；第二部，切换到C语言，用C语言编写主程序和控制显卡输出的函数，最后编译和安装Hello OS。用make工具编译整个代码，形成HelloOS.bin文件，将文件复制到boot 分区，写好GRUB启动项，就完成了。</p>
+<p>踩坑：boot 目录挂载 分为独立挂载，和 &#x2F;boot 文件夹属于根目录一部分，没有采用单独分区。作者的配置环境没有单独分区，而我的采用单独分区，启动 OS 会报没有找到文件的错误。</p>
+<p>参考—-操作系统实战45讲–最全HellOS实验指南—解决问题</p>
+
+
+				
+				
+			
+		</div><!-- .entry-content -->
+		
+		<footer class="entry-footer">
+			<span class="posted-on font-asesome-icon">
+	<a href="" rel="bookmark">
+	<time class="updated" datetime="2024-11-15T08:03:12.000Z">2024-11-15</time>
+	</a>
+</span>
+
+
+	<span class="tags-links font-asesome-icon">
+	
+		<a href="/tags/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/" rel="category tag">操作系统</a>
+    
+</span>
+		
+
+    <span class="eye font-asesome-icon leancloud_visitors" id="/2024/11/15/%E6%90%AD%E5%BB%BA-Hello-OS/" data-flag-title="搭建 Hello OS">
+         <span class="leancloud-visitors-count">
+        
+        </span>
+    </span>
+
+		</footer><!-- .entry-footer -->
+</article>
+<div class="misc">
+    <a href="#main"><span class="top font-asesome-icon">Top</span></a>
+</div>
   
     
 <article class="hentry ">
